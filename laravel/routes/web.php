@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/Login_cpm', function () {
+   return view('Login_cpm');
+});
+Route::get('/Pagina1', function () {
+   return view('Pagina1') ;
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
