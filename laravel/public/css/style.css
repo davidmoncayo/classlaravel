@@ -3,14 +3,19 @@ body, body *{
 }
 
 .navbar{
-    background-color: white;
+    background-color: #17202A;
     
 }
 .nav-link{
-    color:black;
+    color:white;
     font-size:18px;
 }
 .navbar-brand{
-    color:black;
+    color:white;
     font-size:25px;
+}
+.card-header{
+    background-color: #17202A;
+    color: white;
+
 }
