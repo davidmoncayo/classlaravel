@@ -24,6 +24,84 @@
                                 @endif
                             </div>
                         </div>
+                        
+                       <!--SE AGREGO EL CAMPO APELLIDO-->
+                        <div class="form-group row">
+                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required autofocus>
+
+                                @if ($errors->has('lastname'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+                            
+                            <!-- SE AGREGO EL CAMPO TELEFONO-->
+                            
+                            <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>
+
+                                @if ($errors->has('phone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+                            <!-- SE AGREGO LA DIRECCION-->
+                            <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Direcion') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required autofocus>
+
+                                @if ($errors->has('address'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+                            
+                            <!-- SE AGREGO EL CAMPO EDAD-->
+                            <div class="form-group row">
+                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Edad') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="age" type="text" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="{{ old('age') }}" required autofocus>
+
+                                @if ($errors->has('age'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('age') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+                            <!-- SE AGREGO EL CAMPO GENERO-->
+                            
+                            <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Genero') }}</label>
+
+                            <div class="col-md-6">
+                                
+                                
+                                <input id="gender" type="text" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="{{ old('gender') }}" required autofocus>
+                                
+                                @if ($errors->has('gender'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+                            <!-- FINALIZACION DE CAMPOS AGREGADOS-->
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo Eletronico') }}</label>
