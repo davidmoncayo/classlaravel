@@ -91,9 +91,12 @@
 
                             <div class="col-md-6">
                                 
-                                
-                                <input id="gender" type="text" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="{{ old('gender') }}" required autofocus>
-                                
+                                <label for="">Masculino
+                                <input id="gender" type="radio" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="Masculino"  required autofocus>
+                                </label>
+                                <label for="">Femenino
+                                <input id="gender" type="radio" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender"  value="Femenino" required autofocus>
+                                </label>
                                 @if ($errors->has('gender'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('gender') }}</strong>
@@ -118,7 +121,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña Nueva') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>

@@ -7,15 +7,30 @@ body, body *{
     
 }
 .nav-link{
-    color:white;
+   color: white !important;
     font-size:18px;
 }
-.navbar-brand{
-    color:white;
+.navbar-brand {
+    color: white !important;
     font-size:25px;
+    
 }
+
+
 .card-header{
     background-color: #17202A;
     color: white;
 
+}
+
+button[type="submit"] {
+  background: #17202A ;
+  color: white !important;
+}
+button:hover[type="submit"] {
+  background: #17202A ;
+  color: white !important;
+}
+.table-dark{
+background-color: #17202A;
 }

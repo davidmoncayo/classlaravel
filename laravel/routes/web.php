@@ -14,12 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/Login_cpm', function () {
+Route::get('Login_cpm', function () {
    return view('Login_cpm');
 });
-Route::get('/Pagina1', function () {
-   return view('Pagina1') ;
+
+Route::get('Login_cpm', function () {
+   return view('Login_cpm');
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('products', 'productsController');
+
+
+
+?>

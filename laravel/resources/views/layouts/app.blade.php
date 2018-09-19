@@ -24,7 +24,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                
+                <div class="col-md-2">
+                    <img src="/img/dos.png"></img>
+                </div>
                 <a class="navbar-brand" href="http://classlaravel-davidevil.c9users.io/login">
                     {{ config('', 'COMPROMAN') }}
                 </a>
@@ -50,28 +52,43 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                             </li>
                         @else
+                        
+                        <!--SE AGREGO LOS 3 ITEMP EN LA BARRA-->
+                        <li class="nav-item">
+                                <a class="nav-link" href="../home">{{ __('Inicio') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="products">{{ __('Inventario') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">{{ __('Comunicaciones') }}</a>
+                            </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="">{{ __('Pedidos') }}</a>
+                            </li>
+                            
+    
+                            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit"></button>-->
+                            </form>
+                        <!--SE FINALIZO EL AGREGAR LINK LA BARRA-->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
+                                    
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
+                                    <a class="dropdown-item" href="home">Amigos</a>
+                                    <a class="dropdown-item" href="home">Mis calificaciones</a>
+                                    <a class="dropdown-item" href="home">Configuracion</a>
+                                    <a class="dropdown-item" href="home">Acerca de nosotros</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar sesion') }}
                                     </a>
-                                    <!--SE AGREGO "MIS DATOS" COMO DATOS DEL USUARIO-->
-                                     </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Configuracion') }}
-                                    </a>
-                                    
-                                    <!-- SE FINALIZO LAS OPCIONES-->
+                                   
+         <!-- SE FINALIZO LAS OPCIONES-->
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -83,10 +100,14 @@
                 </div>
             </div>
         </nav>
+        
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <div class="card-body">
+            <p class="text-info text-center">Todos los derechos reservados Comproman 2018 by DavidEvil5</p>
+        </div>
 </body>
 </html>
