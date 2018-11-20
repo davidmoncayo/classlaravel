@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Products extends Migration
+class RolCpm extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class Products extends Migration
      */
     public function up()
     {
-       Schema::create('products_cmp', function (Blueprint $table) {
-            $table->increments('id');
+         Schema::create('rol_cmp', function (Blueprint $table) {
+            $table->increments('id_rol');
             $table->string('name');
-            $table->string('cantidad');
-            $table->string('descripcion');
-            $table->string('precio');
-            $table->string('activo');
-            $table->integer('user_pub');
             $table->rememberToken();
             $table->timestamps();
        });
@@ -33,6 +28,6 @@ class Products extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products_cmp');
+        Schema::dropIfExists('rol_cmp');
     }
 }

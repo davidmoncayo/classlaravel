@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<!DOCTYPE html>
 
 <div class="card">
           <div class="card-header">
@@ -29,7 +29,11 @@
                         <input type="hidden" class="form-control"  name="activo" value="1"/>
                     </div>
                     
-                
+                <div >
+                    
+                    <input type="hidden" name="user_pub" value="{{ $user = Auth::id() }}" />
+                    
+                </div>
                     <!--<div class="col-xs-12 col-md-5 ">
                         <input type="file" id="ruta" name="ruta"/>
                     </div>
@@ -40,10 +44,23 @@
                     </div>
                     <div class="col-xs-12 col-md-8">
                         <br>
-                        <button type="submit" class="btn btn-secondary w-50" name="">Registrar</button>
+                        <button type="submit" class="btn btn-secondary w-50" name="rgt">Registrar</button>
                     </div>
                 </div>
+                </form>
                <!--SE AGREGO LA TABLA-->
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>Document</title>
+            </head>
+            <body>
+                
+            
                <br>
                     <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -51,7 +68,6 @@
                        <tr>
                             <td>Nombre</td>
                             <td>Descripcion</td>
-                            
                             <td>Cantidad</td>
                             <td>Precio</td>
                             <td>Editar</td>
@@ -63,19 +79,27 @@
                         @foreach($products as $product)
                         <tr>
                            
-                            <tr>
+                            
+                               
+                               
                                 <td>{{ $product['name'] }}</td>
                                 <td>{{ $product['cantidad'] }}</td>
                                 <td>{{ $product['descripcion'] }}</td>
                                 <td>{{ $product['precio'] }}</td>
                                 
                                 <td><a href=""  class="btn btn-success" >Editar</a></td>
-                               <td><button type="button" id="borrar" class="btn btn-danger">Borrar</button></td>
-                               
+                               <td>
+                        <form method="post" action="{{ action('productsController@destroy', $product->id) }}" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE"/>
+                        <button type="submit" class="btn btn-danger">Delete</a>
+                    </form>
+        </td>
                                 <?php
                                 if( 1 == $product['activo'] ){
                                     ?>
-                                    <td><a href=""  class="btn btn-primary" >Publicar</a></td>
+                        
+                                    <td><a href="{{ action('productsController@destroy', $product->id) }}" class="btn btn-primary">publicar</a></td>
                                     <?php
                                 }else{
                                     ?>
@@ -94,4 +118,5 @@
                 </table>
 
             </div>
+            
   @endsection      

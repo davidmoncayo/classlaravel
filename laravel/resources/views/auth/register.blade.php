@@ -11,6 +11,27 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+
+                    <div class="form-group row">
+                            <label for="rol_user" class="col-md-4 col-form-label text-md-right">{{ __('Rol de usuario') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="rol_user" type="text" class="form-control{{ $errors->has('rol_user') ? ' is-invalid' : '' }}" name="rol_user" value="{{ old('rol_user') }}" required autofocus>
+                                <option value="1">Proveedor de tela</option>
+                                 <option value="2">Fabricante de ropa</option>
+                                 
+                                </select>
+                                @if ($errors->has('rol_user'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('rol_user') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+            
+
+
+
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
@@ -141,6 +162,20 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        
+                        
+                        <!-- SE AGREGO el estado-->
+                            <div class="form-group row">
+                           <div class="col-md-6">
+                                <input id="estado_user" type="hidden" class="form-control{{ $errors->has('estado_user') ? ' is-invalid' : '' }}" name="estado_user" value="1" required autofocus>
+
+                                @if ($errors->has('estado_user'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('estado_user') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
