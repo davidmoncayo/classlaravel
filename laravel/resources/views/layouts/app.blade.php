@@ -51,18 +51,38 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                             </li>
+                            
+                            
                         @else
                         
                         <!--SE AGREGO LOS 3 ITEMP EN LA BARRA-->
                         <li class="nav-item">
                                 <a class="nav-link" href="../home">{{ __('Inicio') }}</a>
                             </li>
-                            <li class="nav-item">
+                            <?php
+                            
+                             $user = Auth::user()->rol_user; 
+                            
+                            if( $user == 3){
+                                ?>
+                                
+                            </li>
+                            
+                                <?php
+                            }else{
+                                ?>
+                                <li class="nav-item">
                                 <a class="nav-link" href="products">{{ __('Inventario') }}</a>
-                            </li>
+                                <?php
+                            }
+                            ?>
+                            
                             <li class="nav-item">
-                                <a class="nav-link" href="">{{ __('Comunicaciones') }}</a>
+                                <a class="nav-link" href="communication">{{ __('Comunicacion') }}</a>
                             </li>
+                            
+                            
+                            
                         <li class="nav-item">
                                 <a class="nav-link" href="">{{ __('Pedidos') }}</a>
                             </li>

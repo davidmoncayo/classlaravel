@@ -17,8 +17,8 @@
 
                             <div class="col-md-6">
                                 <select id="rol_user" type="text" class="form-control{{ $errors->has('rol_user') ? ' is-invalid' : '' }}" name="rol_user" value="{{ old('rol_user') }}" required autofocus>
-                                <option value="1">Proveedor de tela</option>
-                                 <option value="2">Fabricante de ropa</option>
+                                <option value="2">Proveedor de tela</option>
+                                 <option value="3">Fabricante de ropa</option>
                                  
                                 </select>
                                 @if ($errors->has('rol_user'))

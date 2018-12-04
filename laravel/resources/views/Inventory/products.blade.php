@@ -16,7 +16,7 @@
                     </div>
                     
                     <div class="col-xs-12 col-md-5 ml-auto">
-                        <input type="number" class="form-control" placeholder="Cantidad" name="cantidad" required autofocus/>
+                        <input type="number" class="form-control" placeholder="Cantidad en metros" name="cantidad" required autofocus/>
                     </div>
                     <div class="col-xs-12 col-md-5 ">
                         <input type="textarea" value="" placeholder="Descripcion Del Producto" class="form-control" name="descripcion" required autofocus/>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-xs-12 col-md-8">
                         <br>
-                        <button type="submit" class="btn btn-secondary w-50" name="rgt">Registrar</button>
+                        <button type="submit" class="btn btn-secondary w-50" name="rgt">Publicar</button>
                     </div>
                 </div>
                 </form>
@@ -59,7 +59,10 @@
                 <title>Document</title>
             </head>
             <body>
-                
+
+            
+            
+            
             
                <br>
                     <div class="table-responsive">
@@ -67,12 +70,12 @@
                    <thead class="table-dark">
                        <tr>
                             <td>Nombre</td>
-                            <td>Descripcion</td>
                             <td>Cantidad</td>
+                            <td>Descripcion</td>
                             <td>Precio</td>
                             <td>Editar</td>
                             <td>Borrar</td>
-                            <td>Publicar</td>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -82,10 +85,10 @@
                             
                                
                                
-                                <td>{{ $product['name'] }}</td>
-                                <td>{{ $product['cantidad'] }}</td>
-                                <td>{{ $product['descripcion'] }}</td>
-                                <td>{{ $product['precio'] }}</td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->cantidad }}</td>
+                                <td>{{ $product->descripcion }}</td>
+                                <td>{{ $product->precio }}</td>
                                 
                                 <td><a href=""  class="btn btn-success" >Editar</a></td>
                                <td>
@@ -95,19 +98,7 @@
                         <button type="submit" class="btn btn-danger">Delete</a>
                     </form>
         </td>
-                                <?php
-                                if( 1 == $product['activo'] ){
-                                    ?>
-                        
-                                    <td><a href="{{ action('productsController@destroy', $product->id) }}" class="btn btn-primary">publicar</a></td>
-                                    <?php
-                                }else{
-                                    ?>
-                                    <td><button type="button" class="btn btn-primary" disable>Publicado</button></td>
-                                    <?php
-                                }
                                 
-                                ?>
                               
                                 
                                 

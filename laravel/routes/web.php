@@ -22,11 +22,22 @@ Route::get('Login_cpm', function () {
    return view('Login_cpm');
 });
 
+Route::get('bridged', function () {
+   return view('bridged');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('products', 'productsController');
+
+Route::resource('communication', 'communicationController');
+
+
+Route::get('/publicacion/{id}', 'communicationController@consulta');
+//Route::resource('home', 'productsController@view');
 
 
 

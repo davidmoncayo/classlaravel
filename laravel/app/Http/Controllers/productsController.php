@@ -3,29 +3,33 @@
 namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
-
+use DB;
+use Auth;
 class productsController extends Controller
 {
     
-    public function activo(Request $request, $id){
-        $products = Product::find($id);
-        $products->activo = 0;
-        
-        $products->save();
-        return redirect('products');
-    }
     
 
     public function index()
     {
-        $products = Product::all();
+        $user = Auth::id();
+        $products = DB::table('products_cmp')->select('*')->where('user_pub','=',$user)->get();
         return view('Inventory/products', compact('products'));
-        
-        
-        $results = DB::products('select * from products_cmp
-        inner join users on users.id=products_cmp.user_pub');
-        var_dump($results);
 
+
+     
+     //$products = DB::table('users')
+       // ->join('users.id','=', 'users.id')
+        //->select('users.id')
+        //->get();  
+        
+     
+     
+        //$products = DB::table('products_cmp')
+        //->join('products_cmp.user_pub','=', 'users.id')
+        //->select('products_cmp.*','users.id')
+        //->get();  
+        //return view('Inventory/products', compact('products'));
     
         
     }
@@ -37,7 +41,7 @@ class productsController extends Controller
     
     public function view()
     {
-        $products = Product::all();
+        $products = DB::table('products_cmp')->select('*')->where('user_pub','=',1)->get();
         return view('Inventory/public', compact('products'));
     }
     
@@ -46,8 +50,8 @@ class productsController extends Controller
         $products = new Product();
         $products->id = null;
         $products->name = $request->get('name');
-        $products->descripcion = $request->get('cantidad');
-        $products->cantidad = $request->get('descripcion');
+        $products->cantidad = $request->get('cantidad');
+        $products->descripcion = $request->get('descripcion');
         $products->precio = $request->get('precio');
         $products->activo = $request->get('activo');
         $products->user_pub = $request->get('user_pub');
@@ -62,8 +66,9 @@ class productsController extends Controller
         //
         $products = Product::find($id);
         $products->name = $request->get('name');
-        $products->descripcion = $request->get('cantidad');
-        $products->cantidad = $request->get('descripcion');
+        $products->cantidad = $request->get('cantidad');
+        $products->descripcion = $request->get('descripcion');
+        
         $products->precio = $request->get('precio');
         
         $products->save();

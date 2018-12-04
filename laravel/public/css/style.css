@@ -30,7 +30,12 @@ body, body *{
     color: white;
 
 }
-
+button[name="cmn"] {
+  background: #17202A ;
+  color: white !important;
+  
+  
+}
 button[name="rgt"] {
   background: #17202A ;
   color: white !important;
@@ -48,3 +53,4 @@ text-transform: lowercase;
 text-transform: capitalize;
    
 }
+
