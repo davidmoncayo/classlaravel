@@ -34,6 +34,21 @@ if($rol_user == 2 && $mensaj == 1){?>
 }
 ?>
 @if (3 == Auth::id())
+<div class="container">
+<h3 class=" text-center">Chat</h3>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                     <div class="type_msg">
+            <div class="input_msg_write">
+              
+              
+             <input type="text" class="write_msg" placeholder="Escribe un mensaje..."  name="mensaje"/>
+              <button class="msg_send_btn" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
 @else
 <body>
 <div class="container">
@@ -114,7 +129,7 @@ if($rol_user == 2 && $mensaj == 1){?>
             <div class="input_msg_write">
               
               
-             <input type="text" class="write_msg" placeholder="Escribe un mensaje..."  name="mensaje"/>
+             <input type="text" class="write_msg" placeholder="Escribe un mensaje..."  name="mensaje" required/>
              
              <?php 
              if($post_id == null){

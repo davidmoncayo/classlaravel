@@ -48,12 +48,11 @@ button:hover[name="rgt"] {
 .table-dark{
 background-color: #17202A;
 }
-input[type="text"]{
-        
-text-transform: lowercase;
-text-transform: capitalize;
-   
+input[name="ruta"] {
+  background: #17202A ;
+  color: white !important;
 }
+
 
 
 button[name="button_com"] {

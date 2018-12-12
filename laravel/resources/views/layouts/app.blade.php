@@ -117,7 +117,8 @@
         </main>
     </div>
     <div class="card-body">
-            <p class="text-info text-center">Todos los derechos reservados Comproman 2018 by DavidEvil5</p>
+            <p class="text-info text-center">Convenio SENA-UNICUCES</p>
+            
         </div>
 </body>
 </html>

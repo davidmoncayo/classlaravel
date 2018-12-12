@@ -13,7 +13,7 @@ class productsController extends Controller
     public function index()
     {
         $user = Auth::id();
-        $products = DB::table('products_cmp')->select('*')->where('user_pub','=',$user)->get();
+        $products = DB::table('products_cmp')->select('*')->where('user_pub','=',$user)->orderBy('id','desc')->get();
         return view('Inventory/products', compact('products'));
 
 

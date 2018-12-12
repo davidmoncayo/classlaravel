@@ -41,12 +41,12 @@
 <img class="d-block w-100" src="{{ Storage::url($products->ruta) }}" alt="First slide">
     </div>
     
-    <div class="carousel-item">
+    <!--<div class="carousel-item">
       <img class="d-block w-100" src="{{ Storage::url($products->ruta) }}" alt="Second slide">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="{{ Storage::url($products->ruta) }}" alt="Third slide">
-    </div>
+    </div>-->
  
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

@@ -28,7 +28,7 @@
                     <div class="col-xs-12 col-md-5 ml-auto">
                         <input type="hidden" class="form-control"  name="activo" value="1"/>
                     </div>
-                   <input type="file" id="ruta" name="ruta" required/>
+                   <input type="file" id="ruta" name="ruta" class="btn btn-secondary w-10"  required/>
                    
                    
                    
@@ -75,7 +75,7 @@
                        <tr>
                             <td>Nombre</td>
                             <td>Cantidad</td>
-                            <td>Descripcion</td>
+                            <td>Descripcion del producto</td>
                             <td>Precio</td>
                             <td>Imagen</td>
                             <td>Editar</td>
