@@ -82,4 +82,7 @@ class RegisterController extends Controller
             'estado_user' => $data['estado_user'],
         ]);
     }
+    
+    
+    
 }

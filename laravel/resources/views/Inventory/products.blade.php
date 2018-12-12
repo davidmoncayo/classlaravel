@@ -28,7 +28,11 @@
                     <div class="col-xs-12 col-md-5 ml-auto">
                         <input type="hidden" class="form-control"  name="activo" value="1"/>
                     </div>
-                    
+                   <input type="file" id="ruta" name="ruta" required/>
+                   
+                   
+                   
+                   
                 <div >
                     
                     <input type="hidden" name="user_pub" value="{{ $user = Auth::id() }}" />
@@ -73,6 +77,7 @@
                             <td>Cantidad</td>
                             <td>Descripcion</td>
                             <td>Precio</td>
+                            <td>Imagen</td>
                             <td>Editar</td>
                             <td>Borrar</td>
                             
@@ -89,8 +94,9 @@
                                 <td>{{ $product->cantidad }}</td>
                                 <td>{{ $product->descripcion }}</td>
                                 <td>{{ $product->precio }}</td>
+                                <td><img width="100"  src="{{ Storage::url($product->ruta) }}" alt="First slide"></td>
                                 
-                                <td><a href=""  class="btn btn-success" >Editar</a></td>
+                                <td><a href="{{ action('productsController@edit', $product->id) }}"  class="btn btn-success" >Editar</a></td>
                                <td>
                         <form method="post" action="{{ action('productsController@destroy', $product->id) }}" enctype="multipart/form-data">
                         @csrf

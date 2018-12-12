@@ -13,6 +13,7 @@ class Product extends Model
             'cantidad',
             'descripcion',
             'precio',
+            'ruta',
             'activo',
             'user_pub'
         ];

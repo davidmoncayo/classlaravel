@@ -32,7 +32,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('products', 'productsController');
-
+Route::resource('users', 'userController');
 Route::resource('communication', 'communicationController');
 
 

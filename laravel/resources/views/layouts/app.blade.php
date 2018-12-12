@@ -72,23 +72,15 @@
                             }else{
                                 ?>
                                 <li class="nav-item">
-                                <a class="nav-link" href="products">{{ __('Inventario') }}</a>
+                                <a class="nav-link" href="{{url('products')}}">{{ __('Inventario') }}</a>
                                 <?php
                             }
                             ?>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="communication">{{ __('Comunicacion') }}</a>
+                                <a class="nav-link" href="{{url('communication')}}">{{ __('Comunicacion') }}</a>
                             </li>
-                            
-                            
-                            
-                        <li class="nav-item">
-                                <a class="nav-link" href="">{{ __('Pedidos') }}</a>
-                            </li>
-                            
-    
-                            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit"></button>-->
+                          <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit"></button>-->
                             </form>
                         <!--SE FINALIZO EL AGREGAR LINK LA BARRA-->
                             <li class="nav-item dropdown">
@@ -98,9 +90,7 @@
                                     
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     
-                                    <a class="dropdown-item" href="home">Amigos</a>
-                                    <a class="dropdown-item" href="home">Mis calificaciones</a>
-                                    <a class="dropdown-item" href="home">Configuracion</a>
+                                    <a class="dropdown-item" href="{{url('users')}}">Configuracion</a>
                                     <a class="dropdown-item" href="home">Acerca de nosotros</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

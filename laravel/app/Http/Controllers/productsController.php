@@ -53,6 +53,13 @@ class productsController extends Controller
         $products->cantidad = $request->get('cantidad');
         $products->descripcion = $request->get('descripcion');
         $products->precio = $request->get('precio');
+        $products->ruta =  $request->file('ruta')->store('public');
+        //$request->file('ruta')->store('public');
+        
+        //$products->ruta = $request->file('ruta')->store('public')->getClientOriginalName();
+        
+        
+        
         $products->activo = $request->get('activo');
         $products->user_pub = $request->get('user_pub');
         
@@ -60,7 +67,11 @@ class productsController extends Controller
         $products->save();
         return redirect('products');
     }
-    
+    public function edit($id)
+    {
+        $products = Product::find($id);
+        return view('Inventory.edit', compact('Product', 'id'));
+    }
     public function update(Request $request, $id)
     {
         //
@@ -71,8 +82,13 @@ class productsController extends Controller
         
         $products->precio = $request->get('precio');
         
+        $products->ruta =  $request->file('ruta')->store('public');
+        
+        
+         $products->activo = $request->get('activo');
+        $products->user_pub = $request->get('user_pub');
         $products->save();
-        return redirect('courses');
+        return redirect('products');
     }
     
     public function destroy($id)

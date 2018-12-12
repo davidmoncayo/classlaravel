@@ -19,6 +19,7 @@ class Products extends Migration
             $table->string('cantidad');
             $table->string('descripcion');
             $table->string('precio');
+            $table->string('ruta');
             $table->string('activo');
             $table->integer('user_pub');
             $table->rememberToken();

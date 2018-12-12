@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Communication;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 
 class communicationController extends Controller
 {
@@ -57,7 +58,14 @@ class communicationController extends Controller
     
     public function destroy($id)
     {
-       
+        //$communication=Communication::where('id_fab','=',$id)->get()->toArray();
+        //$eliminados = Communication::destroy($communication);
+        $registros=Communication::where('id_fab','=',$id)->get();
+        foreach($registros as $registro){
+        $ids[]=$registro->id;
+        }
+$eliminados = Communication::destroy($ids);
+      return redirect('communication');
         
     }
 }

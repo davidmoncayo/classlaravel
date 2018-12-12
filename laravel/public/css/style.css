@@ -30,6 +30,7 @@ body, body *{
     color: white;
 
 }
+
 button[name="cmn"] {
   background: #17202A ;
   color: white !important;
@@ -52,5 +53,12 @@ input[type="text"]{
 text-transform: lowercase;
 text-transform: capitalize;
    
+}
+
+
+button[name="button_com"] {
+  
+ background: #17202A ;
+  color: white !important;
 }
 
